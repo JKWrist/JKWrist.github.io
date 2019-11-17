@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: 
+url: baidu.com
 date_format: "ordinal"
 title: 
 subtitle: "财富自由"
