@@ -90,7 +90,7 @@ repository: JKWrist/JKWrist.github.io
 # https://imsun.net/posts/gitment-introduction/
 gitment:
     owner: JKWrist
-    repo: jkwrist.github.io/
+    repo: JKWrist.github.io
     oauth:
         client_id: 7c1ec1add46c833c0873
         client_secret: b2cf5adab08219a67a30f4af0d12e478501a6a11
