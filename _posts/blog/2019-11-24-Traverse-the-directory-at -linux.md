@@ -6,11 +6,11 @@ description: Linux目录遍历
 keywords: Linux, 系统调用, 编程
 ---
 
-Linux目录遍历主要分为三步
+##Linux目录遍历主要分为三步
 - 打开目录 
 - 读取目录
 - 关闭目录
-![代码](https://upload-images.jianshu.io/upload_images/617813-2dfcc142fad025d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ```
 #include <sys/stat.h>
