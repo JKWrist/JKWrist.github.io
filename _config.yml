@@ -88,12 +88,10 @@ repository: JKWrist/JKWrist.github.io
 # ---------------- #
 comments_provider: gitalk
 
-#gitalk settings
 gitalk:
   enable: true #用来做启用判断可以不用
   owner: JKWrist
-  repo: JKWrist.github.io
-  admin: JKWrist
+  repo: blog-comments
   clientID: 152675ab0a251d676e6d
   clientSecret: REDACTED_SECRET
   
