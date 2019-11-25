@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 好习惯 one by one 之一
+title: 培养好习惯 
 categories: Blog
-description: 一次训练一个好习惯的计划，第一期。
+description: 训练一个好习惯
 keywords: 好习惯, 计划
 ---
 
