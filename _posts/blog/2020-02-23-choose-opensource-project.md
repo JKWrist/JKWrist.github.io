@@ -63,7 +63,7 @@ keywords: 2020, 总结
 
 
 ## 保持纯洁，加以包装
-我们的建议是不要改动原系统，而是要开发辅助系统: 监控，报警，负载均衡，管理等。以Redis为例，如果我们想增加集群功能，不要去改动Redis本身的实现，而是增加一个proxy层来实现，Twitter的Twemproxy就是这样做的，而Redis到了3.0后本身提供了集群功能，原有的方案简单切换到Redis 3.0即可。详细可参考(http://www.cnblogs.com/gomysql/p/4413922.html )
+我们的建议是不要改动原系统，而是要开发辅助系统: 监控，报警，负载均衡，管理等。以Redis为例，如果我们想增加集群功能，不要去改动Redis本身的实现，而是增加一个proxy层来实现，Twitter的Twemproxy就是这样做的，而Redis到了3.0后本身提供了集群功能，原有的方案简单切换到Redis 3.0即可。
 
 如果实在想改到原有系统，怎么办呢？我们的建议是直接给开源项目提需求或者bug，但弊端就是响应比较缓慢，这个就要看业务紧急程度了，如果实在太急那就只能自己改了，不过不是太急，建议做好备份或者应急手段即可。
 
@@ -94,21 +94,92 @@ public class ImageLoader
 | 使用的公司数量                              |                                         |
 | 社区活跃度                                  |                                        |
 | 日志                                       |                                          |
-| 故障检测和恢复的能力                       |                                          |
+| 故障检测和恢复的能力                         |                                          |
 
 
 | 用开源项目                                 | 是否                                                   |
 |--------------------------------------------|---------------------------------------------------------|
-| 深入研究，仔细测试                          |                                        |
-| 小心应用，灰度发布                          |                                         |
+| 读开源项目的设计文档或者白皮书，了解其设计原理       |                                     |
+| 配置项的作用和影响，识别出关键配置项               |                                      |
+| 读开源项目的设计文档或者白皮书，了解其设计原理         |                                     |
+| 性能测试                                        |                                     |
+| 压力测试，连续跑几天，观察cpu、内存、磁盘io等指标波动  |                                       |
+| 故障测试                                         |                                         |
+
 
 
 | 改开源项目                                 | 是否                                                     |
 |--------------------------------------------|---------------------------------------------------------|
-| 是否容易封装                               |                                                          |
-|                                            |                                                          |
+| 是否易封装                                |                                                          |
+
+
+# 举例
+我们目前的项目中要嵌入一个日志系统
+
+* [Awesome C++](http://fffaraz.github.io/awesome-cpp/)
+## Logging
+
+* [Blackhole](https://github.com/3Hren/blackhole) - Attribute-based logging framework, which is designed to be fast, modular and highly customizable. [MIT]
+* [Boost.Log](http://www.boost.org/doc/libs/1_56_0/libs/log/doc/html/index.html) - Designed to be very modular and extensible. [Boost]
+* [Easylogging++](https://github.com/easylogging/easyloggingpp) - Extremely light-weight high performance logging library for C++11 (or higher) applications. [MIT] [website](https://muflihun.github.io/easyloggingpp)
+* [G3log](https://github.com/KjellKod/g3log) - Asynchronous logger with Dynamic Sinks. [PublicDomain]
+* [glog](https://github.com/google/glog) - C++ implementation of the Google logging module.
+* [Log4cpp](http://log4cpp.sourceforge.net/) - A library of C++ classes for flexible logging to files, syslog, IDSA and other destinations. [LGPL]
+* [log4cplus](https://github.com/log4cplus/log4cplus) - A simple to use C++ logging API providing thread-safe, flexible, and arbitrarily granular control over log management and configuration. [BSD & Apache2]
+* [loguru](https://github.com/emilk/loguru) - A lightweight C++ logging library. [PublicDomain]
+* [plog](https://github.com/SergiusTheBest/plog) - Portable and simple log for C++ in less than 1000 lines of code. [MPL2]
+* [reckless](https://github.com/mattiasflodin/reckless) - Low-latency, high-throughput, asynchronous logging library for C++. [MIT]
+* [spdlog](https://github.com/gabime/spdlog) - Super fast, header only, C++ logging library.
+* [templog](http://www.templog.org/) - A very small and lightweight C++ library which you can use to add logging to your C++ applications. [Boost]
+* [P7Baical](http://baical.net/p7.html) - An open source and cross-platform library for high-speed sending telemetry & trace data  with minimal usage of CPU and memory. [LGPL]
+
+协议描述
+
+![如何选择开源许可证](https://personal-website-1251812117.cos.ap-beijing.myqcloud.com/如何选择开源许可证？.png)
+
+
+[Apache](http://choosealicense.com/licenses/apache/)一个较宽松且简明地指出了专利授权的协议。
+
+- **商业软件可以使用，也可以修改使用Apache协议的代码。**
+
+[GPL](http://choosealicense.com/licenses/gpl-v2/)此协议是应用最为广泛的开源协议，拥有较强的版权自由( copyleft )要求。衍生代码的分发需开源并且也要遵守此协议。此协议有许多变种，不同变种的要求略有不同。
+
+- **商业软件不能使用GPL协议的代码。**
+
+
+[MIT](http://choosealicense.com/licenses/mit/)宽松简单且精要的一个协议。在适当标明来源及免责的情况下，它允许你对代码进行任何形式的使用。
+
+- **商业软件可以使用，也可以修改MIT协议的代码，甚至可以出售MIT协议的代码。**
+
+[Artistic](http://choosealicense.com/licenses/artistic/) Perl 区尤为钟爱此协议。要求更改后的软件不能影响原软件的使用。
+
+[BSD](http://choosealicense.com/licenses/bsd/)较为宽松的协议，包含两个变种[BSD 2-Clause](http://choosealicense.com/licenses/bsd) 和[BSD 3-Clause](http://choosealicense.com/licenses/bsd-3-clause)，两者都与MIT协议只存在细微差异。
+
+- **商业软件可以使用，也可以修改使用BSD协议的代码。**
+
+[Eclipse](http://choosealicense.com/licenses/eclipse/)对商用非常友好的一种协议，可以用于软件的商业授权。包含对专利的优雅授权，并且也可以对相关代码应用商业协议。
+
+[LGPL](http://choosealicense.com/licenses/lgpl-v2.1/)主要用于一些代码库。衍生代码可以以此协议发布（言下之意你可以用其他协议），但与此协议相关的代码必需遵循此协议。
+
+- **商业软件可以使用，但不能修改LGPL协议的代码。**
+
+[Mozilla](http://choosealicense.com/licenses/mozilla/)  Mozilla Public License(MPL 2.0)是由Mozilla基金创建维护的。此协议旨在较为宽松的BSD协议和更加互惠的GPL协议中寻找一个折衷点。
+
+- **商业软件可以使用，也可以修改MPL协议的代码，但修改后的代码版权归软件的发起者。**
+
+[No license](http://choosealicense.com/licenses/no-license/)你保留所有权利，不允许他人分发，复制或者创造衍生物。当你将代码发表在一些网站上时需要遵守该网站的协议，此协议可能包含了一些对你劳动成果的授权许可。比如你将代码发布到GitHub，那么你就必需同意别人可以查看和 Fork你的代码。
+
+[Public domain dedication](http://choosealicense.com/licenses/unlicense/)在许多国家，默认版权归作者自动拥有，所以[Unlicense](http://unlicense.org/)协议提供了一种通用的模板，此协议表明你放弃版权，将劳动成果无私贡献出来。你将丧失对作品的全部权利，包括在MIT/X11中定义的无担保权利。
+
+- **商业软件可以使用，但不能修改LGPL协议的代码。**
 
 # 参考
 - [使用开源项目的正确姿势，都是血和泪的总结！](https://mp.weixin.qq.com/s/IWE5LBYzsUZL5YL8xP_mKA)
 
 - [如何正确使用开源项目?](https://www.cnblogs.com/tc310/p/11053072.html)
+
+- [各种开源协议说明](https://wenku.baidu.com/view/70df4f7402768e9951e738dc.html)
+
+- [GPL协议，LGPL协议，MPL协议](https://blog.csdn.net/xiaoxiao133/article/details/83049959)
+
+- [如何选择开源许可证？](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
