@@ -114,8 +114,9 @@ public class ImageLoader
 
 
 # 举例
-我们目前的项目中要嵌入一个日志系统
+我们目前的项目中要嵌入一个日志系统，首要选择的就是在Linux平台下，C/C++开发，方便集成到项目中的，学习成本比较低的开源库
 
+首先从一些优秀的开源项目中查看有哪些优秀的日志系统
 * [Awesome C++](http://fffaraz.github.io/awesome-cpp/)
 ## Logging
 
@@ -133,7 +134,7 @@ public class ImageLoader
 * [templog](http://www.templog.org/) - A very small and lightweight C++ library which you can use to add logging to your C++ applications. [Boost]
 * [P7Baical](http://baical.net/p7.html) - An open source and cross-platform library for high-speed sending telemetry & trace data  with minimal usage of CPU and memory. [LGPL]
 
-协议描述
+## 如何选择开源许可证
 
 ![如何选择开源许可证](https://personal-website-1251812117.cos.ap-beijing.myqcloud.com/如何选择开源许可证？.png)
 
@@ -172,6 +173,18 @@ public class ImageLoader
 [Public domain dedication](http://choosealicense.com/licenses/unlicense/)在许多国家，默认版权归作者自动拥有，所以[Unlicense](http://unlicense.org/)协议提供了一种通用的模板，此协议表明你放弃版权，将劳动成果无私贡献出来。你将丧失对作品的全部权利，包括在MIT/X11中定义的无担保权利。
 
 - **商业软件可以使用，但不能修改LGPL协议的代码。**
+
+
+## 初步筛选出来的日志系统
+[http://baical.net/p7.html](http://baical.net/p7.html)
+[http://log4cpp.sourceforge.net/](http://log4cpp.sourceforge.net/)
+[https://github.com/amrayn/easyloggingpp](https://github.com/amrayn/easyloggingpp)
+[https://github.com/google/glog](https://github.com/google/glog)
+[https://github.com/gabime/spdlog](https://github.com/gabime/spdlog)
+首先这些项目的社区较好，对于后期出现问题排查可能会好一些。另外就是用的人还比较多。有自己单独的网站，文档方面也较全，学习起来会好一些。
+
+## 进一步筛选
+
 
 # 参考
 - [使用开源项目的正确姿势，都是血和泪的总结！](https://mp.weixin.qq.com/s/IWE5LBYzsUZL5YL8xP_mKA)
