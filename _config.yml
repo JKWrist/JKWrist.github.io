@@ -93,7 +93,7 @@ gitalk:
   owner: JKWrist
   repo: blog-comments
   clientID: 152675ab0a251d676e6d
-  clientSecret: REDACTED_SECRET
+  clientSecret: ENV_GITALK_CLIENT_SECRET # 请通过环境变量注入，切勿明文写入仓库
   
 #gitalk:
 #    owner: JKWrist
