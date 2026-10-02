@@ -13,10 +13,10 @@
 </div>
 
 <script type="text/javascript">
-
-  $(document).ready(function(){
-    $("#blog-categories li").css('text-transform','capitalize')
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll("#blog-categories li").forEach(function(li) {
+      li.style.textTransform = 'capitalize';
+    });
   });
-
 </script>
 
