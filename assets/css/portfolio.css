@@ -1,0 +1,219 @@
+/* 作品集页面样式 — 深浅自适应，跟随系统偏好 */
+:root {
+  --pf-bg: #ffffff;
+  --pf-bg-soft: #f6f8fa;
+  --pf-text: #24292e;
+  --pf-text-dim: #57606a;
+  --pf-border: #d0d7de;
+  --pf-accent: #0969da;
+  --pf-accent-soft: #ddf4ff;
+  --pf-card: #ffffff;
+  --pf-shadow: 0 1px 3px rgba(27,31,35,0.06), 0 8px 24px rgba(140,149,159,0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pf-bg: #0d1117;
+    --pf-bg-soft: #161b22;
+    --pf-text: #e6edf3;
+    --pf-text-dim: #8b949e;
+    --pf-border: #30363d;
+    --pf-accent: #58a6ff;
+    --pf-accent-soft: #0c2d6b;
+    --pf-card: #161b22;
+    --pf-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.45);
+  }
+}
+
+.portfolio {
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pf-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Hero */
+.pf-hero {
+  padding: 96px 0 72px;
+  text-align: center;
+  background: var(--pf-bg-soft);
+  border-bottom: 1px solid var(--pf-border);
+}
+.pf-tag {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--pf-accent);
+  margin: 0 0 20px;
+}
+.pf-hero-title {
+  font-size: 48px;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+.pf-hero-subtitle {
+  font-size: 20px;
+  color: var(--pf-text-dim);
+  margin: 0 0 20px;
+}
+.pf-hero-intro {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  color: var(--pf-text-dim);
+  line-height: 1.7;
+}
+
+/* CTA */
+.pf-cta {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--pf-accent);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+.pf-cta:hover { opacity: 0.85; color: #fff; }
+
+/* Section */
+.pf-section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--pf-border);
+}
+.pf-contact {
+  border-bottom: none;
+  text-align: center;
+}
+.pf-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+/* 能力卡片 */
+.pf-abilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pf-ability-card {
+  background: var(--pf-card);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: var(--pf-shadow);
+}
+.pf-ability-card h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: var(--pf-accent);
+}
+.pf-ability-card p {
+  margin: 0 0 16px;
+  color: var(--pf-text-dim);
+  line-height: 1.6;
+}
+.pf-flow {
+  display: block;
+  font-size: 13px;
+  color: var(--pf-text-dim);
+  background: var(--pf-accent-soft);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* 技能 */
+.pf-skills {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pf-skill-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.pf-skill-bar {
+  height: 8px;
+  background: var(--pf-bg-soft);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.pf-skill-fill {
+  height: 100%;
+  background: var(--pf-accent);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* 项目 */
+.pf-projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.pf-project {
+  background: var(--pf-card);
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: var(--pf-shadow);
+}
+.pf-project-tag {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--pf-accent);
+  background: var(--pf-accent-soft);
+  border-radius: 12px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+.pf-project-title {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+.pf-project-title a { color: var(--pf-text); }
+.pf-project-title a:hover { color: var(--pf-accent); }
+.pf-project-desc {
+  margin: 0 0 12px;
+  color: var(--pf-text-dim);
+  line-height: 1.6;
+}
+.pf-project-tech {
+  font-size: 13px;
+  color: var(--pf-accent);
+  margin: 0 0 8px;
+}
+.pf-project-highlight {
+  font-size: 14px;
+  color: var(--pf-text-dim);
+  border-left: 3px solid var(--pf-accent);
+  padding-left: 12px;
+  margin: 12px 0 0;
+  font-style: italic;
+}
+
+.pf-contact-note {
+  color: var(--pf-text-dim);
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .pf-hero-title { font-size: 34px; }
+  .pf-abilities { grid-template-columns: 1fr; }
+  .pf-projects { grid-template-columns: 1fr; }
+  .pf-section-title { font-size: 26px; }
+}
