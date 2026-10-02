@@ -29,17 +29,17 @@
       <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
     </div>
     <!-- / footer -->
-    <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
-    <script src="{{ site.url }}/assets/js/geopattern.js"></script>
-    <script src="{{ site.url }}/assets/js/prism.js"></script>
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
+    <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js" defer></script>
+    <script src="{{ site.url }}/assets/js/geopattern.js" defer></script>
+    <script src="{{ site.url }}/assets/js/prism.js" defer></script>
     <script>
-      jQuery(document).ready(function($) {
+      document.addEventListener("DOMContentLoaded", function() {
         // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
+        document.querySelectorAll('.geopattern').forEach(function(el) {
+          if (window.GeoPattern && el.getAttribute('data-pattern-id')) {
+            el.style.backgroundImage = window.GeoPattern.generate(el.dataset.patternId).toDataUrl();
+          }
         });
-       // hljs.initHighlightingOnLoad();
       });
     </script>
 

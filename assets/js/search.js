@@ -1,17 +1,20 @@
-jQuery(function() {
-    function adjust_search_box_width() {
-        if ($(".post-directory").length) {
-            if ($(".post-directory").is(":visible")) {
-                $("#site_search").width(300);
-            }
-        }
-        var searchbar_width = $("#site_search").width();
-        $("#search_box").width(searchbar_width - 65);
+(function() {
+  function adjustSearchBoxWidth() {
+    var searchBar = document.getElementById("site_search");
+    var searchBox = document.getElementById("search_box");
+    if (!searchBar || !searchBox) return;
+
+    var postDirectory = document.querySelector(".post-directory");
+    var width = 280;
+    if (postDirectory && getComputedStyle(postDirectory).display !== "none") {
+      width = 300;
     }
+    searchBar.style.width = width + "px";
+    searchBox.style.width = (width - 65) + "px";
+  }
 
-    adjust_search_box_width();
-
-    $(window).on("resize", function() {
-        adjust_search_box_width();
-    });
-});
+  document.addEventListener("DOMContentLoaded", function() {
+    adjustSearchBoxWidth();
+    window.addEventListener("resize", adjustSearchBoxWidth);
+  });
+})();

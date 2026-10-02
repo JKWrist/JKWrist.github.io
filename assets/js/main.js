@@ -1,34 +1,32 @@
 function toggleMenu() {
   var nav = document.getElementsByClassName("site-header-nav")[0];
-  if (nav.style.display == "inline-flex") {
+  if (!nav) return;
+  if (nav.style.display === "inline-flex") {
     nav.style.display = "none";
   } else {
     nav.style.display = "inline-flex";
   }
 }
 
-jQuery(function() {
+(function() {
   // 回到顶部
-  function toTop () {
-    var $toTop = $(".gotop");
+  var toTop = document.querySelector(".gotop");
+  if (!toTop) return;
 
-    $(window).on("scroll", function () {
-      if ($(window).scrollTop() >= $(window).height()) {
-        $toTop.css("display", "block").fadeIn();
-      } else {
-        $toTop.fadeOut();
-      }
-    });
+  var body = document.body;
+  var html = document.documentElement;
 
-    $toTop.on("click", function (evt) {
-      var $obj = $("body,html");
-      $obj.animate({
-        scrollTop: 0
-      }, 240);
+  window.addEventListener("scroll", function() {
+    var scrollTop = window.pageYOffset || html.scrollTop || body.scrollTop;
+    if (scrollTop >= (window.innerHeight || html.clientHeight)) {
+      toTop.style.display = "block";
+    } else {
+      toTop.style.display = "none";
+    }
+  }, { passive: true });
 
-      evt.preventDefault();
-    });
-  }
-
-  toTop();
-});
+  toTop.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
