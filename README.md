@@ -30,7 +30,7 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 
    网站的配置基本都集中在 \_config.yml 文件中，将其中与个人信息相关的部分替换成你自己的，比如网站的 url、title、subtitle 和第三方评论模块的配置等。
 
-   **评论模块：** 目前支持 disqus、gitment 和 gitalk，选用其中一种就可以了，推荐使用 gitalk。它们各自的配置指南链接在 \_config.yml 文件的 Comments 一节里都贴出来了。
+   **评论模块：** 目前支持 disqus、gitment、gitalk 和 utterances，推荐使用 utterances（无需 OAuth Secret，基于 GitHub Issue）。使用 utterances 时需要在 GitHub 上安装 [utterances App](https://github.com/apps/utterances) 到评论仓库。
 
    **注意：** 如果使用 disqus，因为 disqus 处理用户名与域名白名单的策略存在缺陷，请一定将 disqus.username 修改成你自己的，否则请将该字段留空。我对该缺陷的记录见 [Issues#2][3]。
 

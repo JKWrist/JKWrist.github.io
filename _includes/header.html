@@ -64,6 +64,16 @@
     {% endif %}
     <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary">
+    {% if page.og_image_url %}
+    <meta property="og:image" content="{{ page.og_image_url }}">
+    <meta name="twitter:image" content="{{ page.og_image_url }}">
+    {% elsif page.photo_url %}
+    <meta property="og:image" content="{{ page.photo_url }}">
+    <meta name="twitter:image" content="{{ page.photo_url }}">
+    {% else %}
+    <meta property="og:image" content="{{ site.url }}/assets/images/octicons-bg.png">
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/octicons-bg.png">
+    {% endif %}
     {% if page.date %}
     <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}">
     {% endif %}

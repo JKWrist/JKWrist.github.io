@@ -86,20 +86,14 @@ repository: JKWrist/JKWrist.github.io
 # ---------------- #
 #      Comments    #
 # ---------------- #
-comments_provider: gitalk
+comments_provider: utterances
 
-gitalk:
-  enable: true #用来做启用判断可以不用
-  owner: JKWrist
-  repo: blog-comments
-  clientID: 152675ab0a251d676e6d
-  clientSecret: ENV_GITALK_CLIENT_SECRET # 请通过环境变量注入，切勿明文写入仓库
-  
-#gitalk:
-#    owner: JKWrist
-#    repo: blog-comments
-#    clientID: 152675ab0a251d676e6d
-#    clientSecret: REDACTED_SECRET
+# Gitalk 已停止维护且需维护 clientSecret，已迁移至 utterances（无需 OAuth Secret）
+utterances:
+  repo: JKWrist/blog-comments
+  issue_term: pathname # pathname | url | title | og:title | 自定义
+  theme: github-light # github-light | github-dark | 其他 utterances 主题
+  label: comment
 
 # 在使用其它评论组件时可点击显示 Disqus
 #lazy_load_disqus : false
@@ -109,7 +103,7 @@ gitalk:
 # ---------------- #
 simple_jekyll_search:
     # 是否支持全文搜索
-    fulltext: false
+    fulltext: true
     # 最多显示多少条搜索结果
     limit: 10
 
