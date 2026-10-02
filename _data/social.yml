@@ -2,10 +2,6 @@
   name: JKWrist
   url: https://github.com/JKWrist
 
-#- sitename: 掘金
-#  name: mzlogin
-#  url: http://gold.xitu.io/user/570ddaeb2e958a005c63b2da
-
 - sitename: LinkedIn
   name: 徐钧泽 
   url: https://www.linkedin.com/in/%E9%92%A7%E6%B3%BD-%E5%BE%90-b1a838154/
@@ -13,15 +9,3 @@
 - sitename: 博客
   name: 财富自由
   url: https://jkwrist.github.io/
-
-#- sitename: 微博
-#  name: mzlogin
-#  url: http://weibo.com/mzlogin
-
-- sitename: 知乎
-  name: 徐钧泽
-  url: https://www.zhihu.com/people/xu-jun-ze-12/activities
-
-- sitename: 豆瓣
-  name: TC
-  url: https://www.douban.com/people/TalentC/
