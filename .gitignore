@@ -1,8 +1,21 @@
+# Jekyll
 _site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby / Bundler
+Gemfile.lock
+.bundle/
+vendor/
+*.gem
+
+# Editor / OS
 *.swp
-*.~vsd
-\#*\#
 *~
 .DS_Store
-Gemfile.lock
 .vscode/
+.idea/
+
+# Node (if using front-end tooling)
+node_modules/
