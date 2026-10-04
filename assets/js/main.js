@@ -1,32 +1,39 @@
-function toggleMenu() {
-  var nav = document.getElementsByClassName("site-header-nav")[0];
-  if (!nav) return;
-  if (nav.style.display === "inline-flex") {
-    nav.style.display = "none";
-  } else {
-    nav.style.display = "inline-flex";
-  }
-}
-
 (function() {
-  // 回到顶部
-  var toTop = document.querySelector(".gotop");
-  if (!toTop) return;
+  'use strict';
 
-  var body = document.body;
-  var html = document.documentElement;
+  // Mobile menu toggle (for responsive)
+  window.toggleMenu = function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  };
 
-  window.addEventListener("scroll", function() {
-    var scrollTop = window.pageYOffset || html.scrollTop || body.scrollTop;
-    if (scrollTop >= (window.innerHeight || html.clientHeight)) {
-      toTop.style.display = "block";
-    } else {
-      toTop.style.display = "none";
-    }
-  }, { passive: true });
-
-  toTop.addEventListener("click", function(evt) {
-    evt.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   });
+
+  // Skills bar animation on scroll
+  var skillBars = document.querySelectorAll('.skill-bar-fill');
+  if (skillBars.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var bar = entry.target;
+          var width = bar.style.width;
+          bar.style.width = '0%';
+          bar.style.transition = 'width 1s ease';
+          setTimeout(function() { bar.style.width = width; }, 100);
+          observer.unobserve(bar);
+        }
+      });
+    });
+    skillBars.forEach(function(bar) { observer.observe(bar); });
+  }
 })();

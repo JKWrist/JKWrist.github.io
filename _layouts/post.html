@@ -1,49 +1,38 @@
 ---
 layout: default
 ---
-<section class="collection-head small geopattern" data-pattern-id="{{ page.title | truncate: 15, ''}}">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-        <h1 class="collection-header">{{ page.title }}</h1>
-        <div class="collection-info">
-          {% if page.date %}
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
-          </span>
-          {% endif %}
-          {% for cat in page.categories %}
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
-          </span>
-          {% endfor %}
-        </div>
-      </div>
+
+<article class="article">
+  <header class="article-header">
+    <h1>{{ page.title }}</h1>
+    <div class="article-meta">
+      <span>📅 {{ page.date | date: '%Y-%m-%d' }}</span>
+      {% if page.categories.size > 0 %}
+      <span>📂 {{ page.categories | join: ', ' }}</span>
+      {% endif %}
     </div>
-  </div>
-</div>
-</section>
-<!-- / .banner -->
-<section class="container content">
-<div class="columns">
-  <div class="column three-fourths" >
-    <article class="article-content markdown-body">
+  </header>
+
+  <div class="article-content markdown-body">
     {{ content }}
-    </article>
-    <div class="share">
-      {% include sns-share.html %}
-    </div>
-    <div class="comment">
-      {% include comments.html %}
-    </div>
   </div>
-  <div class="column one-fourth">
-    {% include sidebar-search.html %}
-    {% include sidebar-qrcode.html %}
-    {% include sidebar-post-nav.html %}
+
+  <!-- Tags / Categories Navigation -->
+  <nav style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+    {% if page.categories.size > 0 %}
+    <div style="margin-bottom: 1rem;">
+      <span style="color: var(--text-muted); font-size: 0.82rem;">分类：</span>
+      {% for cat in page.categories %}
+      <a href="{{ site.url }}/categories/#{{ cat }}" style="color: var(--accent); font-size: 0.88rem; margin-right: 1rem;">{{ cat }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </nav>
+
+  <!-- Comments -->
+  {% if page.comments != false %}
+  <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+    {% include comments.html %}
   </div>
-</div>
-</section>
-<!-- /section.content -->
+  {% endif %}
+</article>

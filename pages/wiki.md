@@ -1,19 +1,28 @@
 ---
-layout: page
+layout: default
 title: Wiki
-description: 人越学越觉得自己无知
-keywords: 维基, Wiki
+description: 工具与命令速查手册
+keywords: Wiki, 维基, 工具笔记
 comments: false
 menu: 维基
 permalink: /wiki/
 ---
 
-> 记多少命令和快捷键会让脑袋爆炸呢？
+<section class="section">
+  <div class="container" style="max-width: 750px;">
+    <header class="section-header" style="text-align: left; margin-bottom: 3rem;">
+      <h1 style="font-size: 2rem; font-weight: 800;">Wiki</h1>
+      <p style="color: var(--text-secondary); margin-top: 0.75rem;">工具与命令速查手册</p>
+    </header>
 
-<ul class="listing">
-{% for wiki in site.wiki %}
-{% if wiki.title != "Wiki Template" %}
-<li class="listing-item"><a href="{{ site.url }}{{ wiki.url }}">{{ wiki.title }}</a></li>
-{% endif %}
-{% endfor %}
-</ul>
+    <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
+      {% for wiki in site.wiki %}
+      {% if wiki.title != "Wiki Template" %}
+      <a href="{{ site.url }}{{ wiki.url }}" class="skill-item" style="text-decoration: none; color: var(--text);">
+        <div class="skill-name">{{ wiki.title }}</div>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,3 +1,49 @@
-{% include header.html %}
-    {{ content }}
-{% include footer.html %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} &mdash; {% endif %}{{ site.title }}</title>
+  <meta name="author" content="{{ site.author }}">
+  <meta name="theme-color" content="#0a0a0b">
+  
+  <!-- SEO -->
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'wiki' %}article{% else %}website{% endif %}">
+  <meta property="og:image" content="{{ site.url }}{{ site.og_image | default: '/assets/images/octicons-bg.png' }}">
+  {% if page.date %}<meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}">{% endif %}
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.og_image | default: '/assets/images/octicons-bg.png' }}">
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.subscribe_rss }}">
+  <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
+
+  <!-- CSS: Portfolio Theme -->
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/theme.css">
+  {% for css in page.css %}
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/{{ css }}">
+  {% endfor %}
+</head>
+<body class="{{ page.class }}" data-mz="{{ page.class }}">
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  
+  <!-- Defer JS -->
+  <script src="{{ site.url }}/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+---
+layout: default
+class: home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <span class="hero-tag">PORTFOLIO / 2026</span>
+  <h1>你好，我是 <span class="gradient-text">Junze Xu</span></h1>
+  <p>系统程序员 · Linux / C/C++ / OpenSSL<br>记录技术思考与开发实践</p>
+  <a href="#projects" class="cta-btn">看看我的项目 ↓</a>
+</section>
+
+<!-- Abilities Section -->
+<section class="section" id="abilities">
+  <div class="container">
+    <div class="section-header">
+      <h2>Capabilities</h2>
+      <p>我能把想法从 0 推到 1</p>
+    </div>
+    <div class="abilities-grid">
+      <div class="ability-card">
+        <div class="icon">🌐</div>
+        <h3>Web 应用 / 后端服务</h3>
+        <p class="desc">从需求、页面到接口、数据与部署，把模糊想法推进成可以真实使用的产品。</p>
+        <div class="flow">需求 → 页面 → 接口 → 数据 → 部署</div>
+      </div>
+      <div class="ability-card">
+        <div class="icon">⚙️</div>
+        <h3>系统 / 底层开发</h3>
+        <p class="desc">C/C++、Linux、网络与编译工具链，关注性能与可靠性。</p>
+        <div class="flow">系统编程 → 工具链 → 性能优化</div>
+      </div>
+      <div class="ability-card">
+        <div class="icon">🤖</div>
+        <h3>AI 应用 / 自动化</h3>
+        <p class="desc">把 AI 能力与自动化接入真实流程，让重复工作变简单。</p>
+        <div class="flow">想法 → 原型 → 工具 → 流程</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2>Skills</h2>
+      <p>我的技术栈</p>
+    </div>
+    <div class="skills-grid">
+      {% for skill in site.data.skills %}
+      <div class="skill-item">
+        <div class="skill-name">{{ skill.name }}</div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" style="width: {{ skill.level }}%"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2>Projects</h2>
+      <p>近期项目展示</p>
+    </div>
+    <div class="projects-grid">
+      {% for project in site.data.portfolio.projects limit:6 %}
+      <div class="project-card">
+        <div class="project-cover">
+          <span class="emoji">{{ project.emoji | default: '📁' }}</span>
+        </div>
+        <div class="project-info">
+          <span class="project-tag">{{ project.tag }}</span>
+          <h3>{{ project.title }}</h3>
+          <p class="desc">{{ project.description }}</p>
+          {% if project.tech %}
+          <div class="project-tech">{{ project.tech }}</div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Recent Blog Posts -->
+<section class="section" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <h2>Blog</h2>
+      <p>最新文章</p>
+    </div>
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+      <article class="post-card">
+        <h3><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="excerpt">{{ post.excerpt | strip_html | strip | truncate: 100 }}</p>
+        <div class="meta">
+          <span>{{ post.date | date: '%Y-%m-%d' }}</span>
+          {% if post.categories.size > 0 %}
+          <span class="cat">{{ post.categories.first }}</span>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="{{ site.url }}/categories/" class="cta-btn">查看全部文章 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <h2>让我们一起创造 ✨</h2>
+  <p>如果你也有一个想法想做成，欢迎来找我聊聊</p>
+  <div class="contact-links">
+    <a href="mailto:{{ site.email }}">📧 Email</a>
+    <a href="https://github.com/{{ site.github_username }}" target="_blank">🐙 GitHub</a>
+    {% for social in site.data.social %}
+    <a href="{{ social.url }}" target="_blank">{{ social.sitename }}</a>
+    {% endfor %}
+  </div>
+</section>

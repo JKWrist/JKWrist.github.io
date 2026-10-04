@@ -4,7 +4,7 @@
 baseurl:
 url: https://JKWrist.github.io
 date_format: "ordinal"
-title: "JKWrist's Blog"
+title: "JunzeXu's Blog"
 subtitle: "徐钧泽"
 description: "Junze Xu 的个人博客，记录 Linux、C/C++、OpenSSL、Makefile 等技术笔记与开发心得"
 keywords: Linux, C++, OpenSSL, Makefile, 系统编程, 面试笔记, 技术博客
@@ -92,7 +92,7 @@ comments_provider: utterances
 utterances:
   repo: JKWrist/blog-comments
   issue_term: pathname # pathname | url | title | og:title | 自定义
-  theme: github-light # github-light | github-dark | 其他 utterances 主题
+  theme: github-dark # github-light | github-dark | 其他 utterances 主题
   label: comment
 
 # 在使用其它评论组件时可点击显示 Disqus

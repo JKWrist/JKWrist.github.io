@@ -1,39 +1,24 @@
 ---
 layout: default
 ---
-<section class="collection-head small geopattern" data-pattern-id="{{ page.title | truncate: 15}}">
-    <div class="container">
-        <div class="collection-title">
-            <h1 class="collection-header">{{ page.title }}</h1>
-            {% if page.subtitle %}
-                <div class="collection-info">
-                    <span class="meta-info">
-                        {{ page.subtitle}}
-                    </span>
-                </div>
-            {% endif %}
-        </div>
+
+<section class="section">
+  <div class="container" style="max-width: 750px;">
+    <header class="section-header" style="text-align: left; margin-bottom: 2rem;">
+      {% if page.title %}
+      <h1 style="font-size: 2rem; font-weight: 800;">{{ page.title }}</h1>
+      {% endif %}
+      {% if page.subtitle %}
+      <p style="color: var(--text-secondary); margin-top: 0.75rem;">{{ page.subtitle }}</p>
+      {% endif %}
+    </header>
+    <div class="article-content markdown-body" style="color: var(--text-secondary);">
+      {{ content }}
     </div>
+    {% if page.comments != false %}
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+      {% include comments.html %}
+    </div>
+    {% endif %}
+  </div>
 </section>
-<!-- / .banner -->
- <section class="container content">
-        <div class="columns">
-            <div class="column two-thirds" >
-                <article class="article-content markdown-body">
-                    {{ content }}
-                </article>
-                <div class="share">
-                    {% include sns-share.html %}
-                </div>
-                <div class="comment">
-                    {% include comments.html %}
-                </div>
-            </div>
-            <div class="column one-third">
-                {% include sidebar-search.html %}
-                {% include sidebar-qrcode.html %}
-                {% include sidebar-popular-repo.html %}
-            </div>
-        </div>
-    </section>
-    <!-- /section.content -->
