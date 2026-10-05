@@ -47,6 +47,10 @@ navs:
     label: 链接
 
   -
+    href: /search/
+    label: 搜索
+
+  -
     href: /about/
     label: 关于
 
