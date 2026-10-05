@@ -1,8 +1,8 @@
 ---
 layout: default
 title: 关于
-description: Junze Xu 的个人介绍与作品集——系统程序员，专注于 Linux、C/C++、OpenSSL
-keywords: Junze Xu, 关于, 作品集, 系统程序员, Linux, C++
+description: Junze Xu ——系统程序员，专注于 Linux、C/C++、OpenSSL
+keywords: Junze Xu, 作品集, 系统程序员, Linux, C++
 comments: false
 menu: 关于
 permalink: /about/
