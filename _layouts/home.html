@@ -3,100 +3,74 @@ layout: default
 class: home
 ---
 
-<!-- Hero Section -->
-<section class="hero">
-  <span class="hero-tag">PORTFOLIO / 2026</span>
-  <h1>你好，我是 <span class="gradient-text">Junze Xu</span></h1>
-  <p>系统程序员 · Linux / C/C++ / OpenSSL<br>记录技术思考与开发实践</p>
-  <a href="#projects" class="cta-btn">看看我的项目 ↓</a>
+<!-- Compact Hero -->
+<section class="hero" style="min-height: auto; padding: 4.5rem 2rem 3.5rem;">
+  <span class="hero-tag">NOTES &amp; CHEATSHEETS</span>
+  <h1>技术<span class="gradient-text">笔记与速查</span></h1>
+  <p>{{ site.posts.size }} 篇文章 · {{ site.wiki.size }} 篇速查手册<br>Linux · C/C++ · OpenSSL · 构建工具 · 效率软件</p>
+  <div class="hero-actions">
+    <a href="{{ '/search/' | relative_url }}" class="cta-btn">🔍 全文搜索</a>
+    <a href="{{ '/about/' | relative_url }}" class="cta-btn ghost">关于我 →</a>
+  </div>
 </section>
 
-<!-- Skills Section -->
-<section class="section" id="skills">
+<!-- Blog Categories -->
+<section class="section" id="categories">
   <div class="container">
     <div class="section-header">
-      <h2>Skills</h2>
-      <p>我的技术栈</p>
+      <h2>文章分类</h2>
+      <p>按主题浏览全部文章</p>
     </div>
-    <div class="skills-grid">
-      {% for skill in site.data.skills %}
-      <div class="skill-item">
-        <div class="skill-header">
-          <span class="skill-name">{{ skill.name }}</span>
-          <span class="skill-level">{{ skill.level }}%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-bar-fill" style="width: {{ skill.level }}%"></div>
-        </div>
+
+    {% assign sorted_categories = site.categories | sort %}
+    <!-- Quick nav -->
+    <div class="cat-nav-grid">
+      {% for category in sorted_categories %}
+      <a href="#cat-{{ category[0] }}" class="cat-nav-card">
+        {{ category[0] }}<span class="count">{{ category[1].size }}</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <!-- Full listing -->
+    <div class="cat-listing">
+      {% for category in sorted_categories %}
+      <div class="category-block" id="cat-{{ category[0] }}">
+        <h3>{{ category[0] }} <span class="cat-count">{{ category[1].size }} 篇</span></h3>
+        <ul class="category-list">
+          {% for post in category.last %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: '%Y-%m-%d' }}</span>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<!-- Projects Section -->
-<section class="section" id="projects">
+<!-- Wiki Groups -->
+<section class="section" id="wiki">
   <div class="container">
     <div class="section-header">
-      <h2>Projects</h2>
-      <p>近期项目展示</p>
+      <h2>笔记速查</h2>
+      <p><a href="{{ '/wiki/' | relative_url }}">进入 Wiki →</a></p>
     </div>
-    <div class="projects-grid">
-      {% for project in site.data.portfolio.projects limit:6 %}
-      <div class="project-card">
-        <div class="project-cover">
-          <span class="emoji">{{ project.emoji | default: '📁' }}</span>
-        </div>
-        <div class="project-info">
-          <span class="project-tag">{{ project.tag }}</span>
-          <h3>{{ project.title }}</h3>
-          <p class="desc">{{ project.description }}</p>
-          {% if project.tech %}
-          <div class="project-tech">{{ project.tech }}</div>
-          {% endif %}
+    <div class="wiki-groups-grid">
+      {% for g in site.data.wiki-groups %}
+      {% assign group_items = site.wiki | where: "group", g.key %}
+      <div class="wiki-group-card">
+        <h3>{{ g.icon }} {{ g.name }} <span class="cat-count">{{ group_items.size }}</span></h3>
+        <p class="group-desc">{{ g.desc }}</p>
+        <div class="wiki-group-items">
+          {% for wiki in group_items %}
+          <a href="{{ wiki.url | relative_url }}" class="chip">{{ wiki.title }}</a>
+          {% endfor %}
         </div>
       </div>
       {% endfor %}
     </div>
-  </div>
-</section>
-
-<!-- Recent Blog Posts -->
-<section class="section" id="blog">
-  <div class="container">
-    <div class="section-header">
-      <h2>Blog</h2>
-      <p>最新文章</p>
-    </div>
-    <div class="posts-grid">
-      {% for post in site.posts limit:6 %}
-      <article class="post-card">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="excerpt">{{ post.excerpt | strip_html | strip | truncate: 100 }}</p>
-        <div class="meta">
-          <span>{{ post.date | date: '%Y-%m-%d' }}</span>
-          {% if post.categories.size > 0 %}
-          <span class="cat">{{ post.categories.first }}</span>
-          {% endif %}
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-    <div style="text-align: center; margin-top: 2.5rem;">
-      <a href="{{ '/categories/' | relative_url }}" class="cta-btn">查看全部文章 →</a>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section class="contact" id="contact">
-  <h2>让我们一起创造 ✨</h2>
-  <p>如果你也有一个想法想做成，欢迎来找我聊聊</p>
-  <div class="contact-links">
-    <a href="mailto:{{ site.email }}">📧 Email</a>
-    <a href="https://github.com/{{ site.github_username }}" target="_blank">🐙 GitHub</a>
-    {% for social in site.data.social %}
-    <a href="{{ social.url }}" target="_blank">{{ social.sitename }}</a>
-    {% endfor %}
   </div>
 </section>

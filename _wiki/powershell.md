@@ -1,4 +1,5 @@
 ---
+group: system
 layout: wiki
 title: PowerShell
 categories: Windows

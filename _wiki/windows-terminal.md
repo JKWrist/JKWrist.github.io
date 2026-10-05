@@ -1,4 +1,5 @@
 ---
+group: system
 layout: wiki
 title: Windows Terminal
 categories: [Tools]

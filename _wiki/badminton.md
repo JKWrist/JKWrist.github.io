@@ -1,4 +1,5 @@
 ---
+group: life
 layout: wiki
 title: Badminton
 categories: Hobbies

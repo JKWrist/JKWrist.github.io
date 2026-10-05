@@ -1,4 +1,5 @@
 ---
+group: dev
 layout: wiki
 title: Qt Creator
 categories: Qt

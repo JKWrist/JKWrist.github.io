@@ -662,3 +662,164 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* --- Home: Doc Hub Components --- */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.cta-btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.cta-btn.ghost:hover {
+  border-color: var(--text);
+  box-shadow: none;
+  color: var(--text);
+}
+
+/* Category quick nav pills */
+.cat-nav-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+.cat-nav-card {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.55rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  color: var(--text);
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cat-nav-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  color: var(--text);
+}
+.cat-nav-card .count,
+.cat-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Category full listing */
+.category-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.category-block:last-child {
+  border-bottom: none;
+}
+.category-block h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.category-block h3 .cat-count {
+  margin-left: 0.5rem;
+}
+.category-list {
+  list-style: none;
+  padding: 0;
+}
+.category-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.category-list li:last-child {
+  border-bottom: none;
+}
+.category-list a {
+  color: var(--text);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.category-list a:hover {
+  color: var(--accent-2);
+}
+.category-list .post-date {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+/* Wiki group cards */
+.wiki-groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.wiki-group-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.wiki-group-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+}
+.wiki-group-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.group-desc {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+.wiki-group-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.chip {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.chip:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* Home responsive tweaks */
+@media (max-width: 768px) {
+  .category-list li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .category-list .post-date {
+    margin-left: 0;
+  }
+  .wiki-groups-grid {
+    grid-template-columns: 1fr;
+  }
+}

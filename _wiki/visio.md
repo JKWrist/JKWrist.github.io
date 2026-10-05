@@ -1,4 +1,5 @@
 ---
+group: software
 layout: wiki
 title: Visio
 categories: Tools

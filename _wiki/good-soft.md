@@ -1,4 +1,5 @@
 ---
+group: software
 layout: wiki
 title: 善用佳软
 categories: Recommends

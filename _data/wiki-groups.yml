@@ -1,0 +1,22 @@
+# Wiki 分组定义
+# 每个条目对应 _wiki/ 下 front matter 中的 group 值
+
+- key: dev
+  name: 开发工具
+  icon: 🛠️
+  desc: 编辑器、IDE、版本控制等开发利器
+
+- key: system
+  name: 系统平台
+  icon: 💻
+  desc: Linux / macOS / Windows 使用笔记
+
+- key: software
+  name: 效率软件
+  icon: 📦
+  desc: 提升工作与写作效率的软件
+
+- key: life
+  name: 生活兴趣
+  icon: 🏸
+  desc: 工作之外的运动与爱好
