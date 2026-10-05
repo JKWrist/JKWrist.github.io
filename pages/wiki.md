@@ -19,7 +19,7 @@ permalink: /wiki/
       {% for wiki in site.wiki %}
       {% if wiki.title != "Wiki Template" %}
       <a href="{{ wiki.url | relative_url }}" class="skill-item" style="text-decoration: none; color: var(--text);">
-        <div class="skill-name">{{ wiki.title }}</div>
+        <div class="skill-name" style="white-space: normal; word-break: break-word;">{{ wiki.title }}</div>
       </a>
       {% endif %}
       {% endfor %}
