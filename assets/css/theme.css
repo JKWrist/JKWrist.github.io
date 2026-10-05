@@ -181,6 +181,38 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+.hero-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.hero-stats strong {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.hero-stats .divider {
+  color: var(--border);
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .hero-stats {
+    font-size: 0.88rem;
+    gap: 0.45rem;
+  }
+  .hero-stats strong {
+    font-size: 0.95rem;
+  }
+}
+
 .cta-btn {
   display: inline-flex;
   align-items: center;

@@ -5,9 +5,15 @@ class: home
 
 <!-- Compact Hero -->
 <section class="hero" style="min-height: auto; padding: 4.5rem 2rem 3.5rem;">
-  <span class="hero-tag">NOTES &amp; CHEATSHEETS</span>
-  <h1>技术<span class="gradient-text">笔记与速查</span></h1>
-  <p>{{ site.posts.size }} 篇文章 · {{ site.wiki.size }} 篇速查手册<br>Linux · C/C++ · OpenSSL · 构建工具 · 效率软件</p>
+  <span class="hero-tag">TECH BLOG</span>
+  <h1>技术<span class="gradient-text">文章笔记</span></h1>
+  <div class="hero-stats">
+    <span><strong>{{ site.posts.size }}</strong> 篇文章</span>
+    <span class="divider">·</span>
+    <span><strong>{{ site.wiki.size }}</strong> 篇速查手册</span>
+    <span class="divider">·</span>
+    <span>Linux / C++ / OpenSSL / 效率工具</span>
+  </div>
   <div class="hero-actions">
     <a href="{{ '/search/' | relative_url }}" class="cta-btn">🔍 全文搜索</a>
     <a href="{{ '/about/' | relative_url }}" class="cta-btn ghost">关于我 →</a>
