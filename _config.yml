@@ -1,7 +1,7 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl:
+baseurl: ""
 url: https://JKWrist.github.io
 date_format: "ordinal"
 title: "JunzeXu's Blog"

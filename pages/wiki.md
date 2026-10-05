@@ -18,7 +18,7 @@ permalink: /wiki/
     <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
       {% for wiki in site.wiki %}
       {% if wiki.title != "Wiki Template" %}
-      <a href="{{ site.url }}{{ wiki.url }}" class="skill-item" style="text-decoration: none; color: var(--text);">
+      <a href="{{ wiki.url | relative_url }}" class="skill-item" style="text-decoration: none; color: var(--text);">
         <div class="skill-name">{{ wiki.title }}</div>
       </a>
       {% endif %}

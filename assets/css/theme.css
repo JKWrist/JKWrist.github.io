@@ -612,8 +612,8 @@ h1, h2, h3, h4, h5, h6 {
   .container { padding: 0 1.25rem; }
   .hero { min-height: auto; padding: 3rem 1.25rem; }
   .section { padding: 3rem 0; }
-  .site-nav { gap: 1rem; }
-  .site-nav a { font-size: 0.82rem; }
+  .site-nav { gap: 0.5rem; flex-wrap: nowrap; white-space: nowrap; }
+  .site-nav a { font-size: 0.78rem; padding: 0.3rem 0; }
   .posts-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .abilities-grid { grid-template-columns: 1fr; }
@@ -621,6 +621,19 @@ h1, h2, h3, h4, h5, h6 {
   .article-header { text-align: left; }
   .article-meta { flex-wrap: wrap; gap: 0.75rem; }
   .contact { padding: 3rem 1.25rem; }
+  /* Prevent content overflow on mobile */
+  .article-content blockquote,
+  .article-content pre,
+  .article-content table { overflow-x: auto; }
+  .article-content pre { -webkit-overflow-scrolling: touch; }
+  .article-content table { display: block; }
+  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 2rem; }
+  .site-logo { font-size: 1.1rem; }
 }
 
 /* --- Scrollbar (optional, modern look) --- */

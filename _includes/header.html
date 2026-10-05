@@ -1,10 +1,10 @@
 <header class="site-header">
   <div class="container">
-    <a href="{{ site.url }}/" class="site-logo">{{ site.title }}</a>
+    <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
     <nav>
       <ul class="site-nav">
         {% for nav in site.navs %}
-        <li><a href="{{ site.url }}{{ nav.href }}" class="{% if page.menu == nav.label %}active{% endif %}">{{ nav.label }}</a></li>
+        <li><a href="{{ nav.href | relative_url }}" class="{% if page.menu == nav.label %}active{% endif %}">{{ nav.label }}</a></li>
         {% endfor %}
       </ul>
     </nav>

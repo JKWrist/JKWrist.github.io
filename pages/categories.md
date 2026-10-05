@@ -25,7 +25,7 @@ permalink: /categories/
       <ul style="list-style: none; padding: 0;">
         {% for post in category.last %}
         <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; justify-content: space-between; align-items: baseline;">
-          <a href="{{ site.url }}{{ post.url }}" style="color: var(--text); font-size: 0.95rem;">{{ post.title }}</a>
+          <a href="{{ post.url | relative_url }}" style="color: var(--text); font-size: 0.95rem;">{{ post.title }}</a>
           <span style="color: var(--text-muted); font-size: 0.78rem; font-family: var(--font-mono); white-space: nowrap; margin-left: 1rem;">{{ post.date | date: '%Y-%m-%d' }}</span>
         </li>
         {% endfor %}

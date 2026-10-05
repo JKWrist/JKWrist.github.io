@@ -98,7 +98,7 @@ class: home
     <div class="posts-grid">
       {% for post in site.posts limit:6 %}
       <article class="post-card">
-        <h3><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h3>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p class="excerpt">{{ post.excerpt | strip_html | strip | truncate: 100 }}</p>
         <div class="meta">
           <span>{{ post.date | date: '%Y-%m-%d' }}</span>
@@ -110,7 +110,7 @@ class: home
       {% endfor %}
     </div>
     <div style="text-align: center; margin-top: 2.5rem;">
-      <a href="{{ site.url }}/categories/" class="cta-btn">查看全部文章 →</a>
+      <a href="{{ '/categories/' | relative_url }}" class="cta-btn">查看全部文章 →</a>
     </div>
   </div>
 </section>
