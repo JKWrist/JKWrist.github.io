@@ -1,8 +1,33 @@
-- name: Software Engineer Keywords
-  keywords:
-      - C
-      - C++
-      - Python
-      - Linux
-      - Git/SVN
-      - 技能这东西靠实践会一点一点变多的
+# 技术栈数据
+# level 为熟练度百分比（仅作视觉展示用）
+# 对应首页 Skills 区块的技能条
+
+- name: C/C++
+  level: 90
+
+- name: Linux 系统编程
+  level: 85
+
+- name: Socket/网络编程
+  level: 85
+
+- name: TCP/IP / HTTP
+  level: 80
+
+- name: GDB 调试
+  level: 80
+
+- name: OpenSSL/加密
+  level: 75
+
+- name: Makefile
+  level: 75
+
+- name: Git/SVN
+  level: 70
+
+- name: Python
+  level: 70
+
+- name: Shell
+  level: 65
