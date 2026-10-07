@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl: ""
-url: https://JKWrist.github.io
+url: https://junze-xu.github.io
 date_format: "ordinal"
 title: "JunzeXu's Blog"
 subtitle: "徐钧泽"
@@ -18,7 +18,7 @@ side_bar_repo_limit: 5
 author: Junze Xu
 organization: 
 organization_url: 
-github_username: JKWrist
+github_username: junze-xu
 location: ShenZhen, China
 email: b179455659@gmail.com
 
@@ -81,7 +81,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: JKWrist/JKWrist.github.io
+repository: junze-xu/junze-xu.github.io
 
 # ---------------- #
 #      Comments    #
@@ -90,7 +90,7 @@ comments_provider: utterances
 
 # Gitalk 已停止维护且需维护 clientSecret，已迁移至 utterances（无需 OAuth Secret）
 utterances:
-  repo: JKWrist/JKWrist.github.io
+  repo: junze-xu/junze-xu.github.io
   issue_term: pathname # pathname | url | title | og:title | 自定义
   theme: github-dark # github-light | github-dark | 其他 utterances 主题
   label: comment

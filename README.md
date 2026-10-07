@@ -1,8 +1,8 @@
 # JunzeXu's Blog
 
 <p align="center">
-  <a href="https://jkwrist.github.io">🌐 在线访问</a> ·
-  <a href="https://github.com/JKWrist/JKWrist.github.io/issues">💬 留言</a>
+  <a href="https://junze-xu.github.io">🌐 在线访问</a> ·
+  <a href="https://github.com/junze-xu/junze-xu.github.io/issues">💬 留言</a>
 </p>
 
 ## 关于
