@@ -9,9 +9,19 @@
 
 我的个人技术博客，记录 Linux、C/C++、OpenSSL、Makefile 等领域的技术笔记与开发心得。
 
-- 31 篇文章 · 21 篇速查手册
-- 主题为自研深色风格，基于 Jekyll + GitHub Pages
-- 评论系统：[Utterances](https://utteranc.es/)（基于 GitHub Issues）
+**内容构成**
+
+- 31 篇技术博客文章（Linux / C++ / OpenSSL / 构建工具 / 开发笔记）
+- 21 篇速查手册（按四组分类：开发工具 / 系统平台 / 效率软件 / 生活兴趣）
+- 支持全文搜索（标题 + 正文）
+
+**技术栈**
+
+- [Jekyll](https://jekyllrb.com/) 静态站点生成 + [GitHub Pages](https://pages.github.com/) 自动部署
+- 自研深色主题（CSS 变量驱动，原生 JS，无 jQuery 依赖）
+- [Utterances](https://utteranc.es/) 评论系统（基于 GitHub Issues，无隐私追踪）
+- [不蒜子](https://busuanzi.ibruce.info/) 轻量访问量统计
+- Open Graph + Twitter Card + sitemap 等 SEO 完善
 
 ## 本地运行
 
