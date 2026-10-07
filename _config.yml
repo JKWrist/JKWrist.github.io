@@ -90,7 +90,7 @@ comments_provider: utterances
 
 # Gitalk 已停止维护且需维护 clientSecret，已迁移至 utterances（无需 OAuth Secret）
 utterances:
-  repo: JKWrist/blog-comments
+  repo: JKWrist/JKWrist.github.io
   issue_term: pathname # pathname | url | title | og:title | 自定义
   theme: github-dark # github-light | github-dark | 其他 utterances 主题
   label: comment
