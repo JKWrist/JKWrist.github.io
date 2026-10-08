@@ -1,60 +1,72 @@
 # 个人作品集数据
+# 修改本文件即可更新 /about/ 作品集页面，无需改 HTML
 
+# 顶部 Hero 区
 hero:
   tag: PORTFOLIO / 2026
   title: "你好，我是 Junze Xu"
-  subtitle: "系统程序员 · Linux / C/C++ / OpenSSL"
+  subtitle: "一个热爱技术与创造的全栈开发者"
   intro: >
-    专注于 Linux 系统编程、C/C++ 开发与嵌入式软件，
-    在医疗设备网络安全、文件服务、协议集成方面有实际项目经验。
+    这里简单介绍你的定位与标签。修改 _data/portfolio.yml 中的 hero.intro 字段即可替换这段文字。
   cta_text: "看看我的项目 ↓"
   cta_link: "#projects"
 
+# 能力归纳（三段式，呼应"我能把想法从 0 推到 1"）
 abilities:
+  - title: "Web 应用 / 后端服务"
+    desc: "从需求、页面到接口、数据与部署，把模糊想法推进成可以真实使用的产品。"
+    flow: "需求 → 页面 → 接口 → 数据 → 部署"
   - title: "系统 / 底层开发"
     desc: "C/C++、Linux、网络与编译工具链，关注性能与可靠性。"
     flow: "系统编程 → 工具链 → 性能优化"
-  - title: "网络安全 / 加密传输"
-    desc: "非对称加密、权限控制、iptables 防护，保障嵌入式设备通信安全。"
-    flow: "需求分析 → 方案设计 → 实施 → 渗透测试"
-  - title: "协议集成 / 网络编程"
-    desc: "Socket 编程、多线程/多进程模型、HL7 等协议解析与集成。"
-    flow: "协议分析 → 模块开发 → 联调 → 上线"
+  - title: "AI 应用 / 自动化"
+    desc: "把 AI 能力与自动化接入真实流程，让重复工作变简单。"
+    flow: "想法 → 原型 → 工具 → 流程"
 
+# 技能标签
 skills:
   - name: C/C++
     level: 90
+  - name: Python
+    level: 85
   - name: Linux
     level: 85
-  - name: 网络编程
+  - name: Git/SVN
     level: 80
   - name: OpenSSL
     level: 75
-  - name: Git/SVN
-    level: 80
-  - name: Makefile/CMake
-    level: 75
+  - name: AI 应用
+    level: 70
 
+# 项目列表（占位，后续自行填写）
+# tag 可选：补全/接通/落地/从0到1 等关键词
 projects:
-  - title: "基于私有协议的文件服务器"
+  - title: "项目一（占位）"
     tag: "从 0 到 1"
-    description: "搭建 TCP 线程池框架，实现客户端对服务器的目录浏览、文件上传/下载、删除等命令解析。集成数据库存储用户信息，MD5 秒传与断点续传，crypt 密码验证与日志记录。"
-    tech: "C/C++ / Linux / Socket / 多线程 / MySQL"
-    highlights: "完整实现文件服务核心功能，支持断点续传与秒传"
+    description: "在这里一句话描述这个项目是做什么的、解决了什么问题。"
+    tech: "技术A / 技术B / 技术C"
+    highlights: "一句话突出这个项目的成果或亮点。"
     link: ""
-  - title: "心电图机网络安全加固"
-    tag: "落地"
-    description: "为嵌入式心电图机实施网络安全方案：Tomoyo 权限控制、iptables 防护、非对称加密传输。防御 DoS 攻击、HID 攻击与端口扫描，最终通过公司内部渗透测试，成为版本卖点之一。"
-    tech: "C/C++ / Linux / OpenSSL / iptables / Tomoyo"
-    highlights: "加密传输从无到有，通过渗透测试"
-    link: ""
-  - title: "HL7 医疗协议集成"
+  - title: "项目二（占位）"
     tag: "接通"
-    description: "完成 HL7 协议（医疗通用协议）与 HIS 服务器的通信集成，主要负责网络编程与协议解析工作，实现设备与医院信息系统的数据交互。"
-    tech: "C/C++ / Linux / Socket / HL7"
-    highlights: "实现医疗设备与 HIS 系统的互联互通"
+    description: "在这里一句话描述这个项目是做什么的、解决了什么问题。"
+    tech: "技术A / 技术B / 技术C"
+    highlights: "一句话突出这个项目的成果或亮点。"
+    link: ""
+  - title: "项目三（占位）"
+    tag: "补全"
+    description: "在这里一句话描述这个项目是做什么的、解决了什么问题。"
+    tech: "技术A / 技术B / 技术C"
+    highlights: "一句话突出这个项目的成果或亮点。"
+    link: ""
+  - title: "项目四（占位）"
+    tag: "落地"
+    description: "在这里一句话描述这个项目是做什么的、解决了什么问题。"
+    tech: "技术A / 技术B / 技术C"
+    highlights: "一句话突出这个项目的成果或亮点。"
     link: ""
 
+# 联系区
 contact:
   intro: "如果你也有一个想法想做成，欢迎来找我聊聊。"
   email: "b179455659@gmail.com"
