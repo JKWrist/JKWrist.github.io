@@ -91,7 +91,7 @@ permalink: /about/
     {% endfor %}
   </div>
   <div style="margin-top: 2.5rem;">
-    <img src="{{ '/images/wechat-qrcode.png' | relative_url }}" alt="微信二维码" style="width: 140px; height: 140px; border-radius: 12px; border: 1px solid var(--border);">
+    <img src="{{ '/images/Wechat_JunzeXu.jpeg' | relative_url }}" alt="微信二维码" style="width: 140px; height: 140px; border-radius: 12px; border: 1px solid var(--border);">
     <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.6rem;">扫码加微信</p>
   </div>
 </section>
