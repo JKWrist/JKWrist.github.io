@@ -28,6 +28,45 @@
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:image" content="{{ site.url }}{{ site.og_image | default: '/assets/images/octicons-bg.png' }}">
 
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    {% if page.layout == 'post' or page.layout == 'wiki' %}
+    "@type": "Article",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 | jsonify }},
+    "author": {
+      "@type": "Person",
+      "name": {{ site.author | jsonify }},
+      "url": "https://github.com/junze-xu"
+    },
+    "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    "image": "{{ site.url }}{{ site.og_image | default: '/assets/images/octicons-bg.png' }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ site.title | jsonify }}
+    }
+    {% else %}
+    "@type": "WebSite",
+    "name": {{ site.title | jsonify }},
+    "description": {{ site.description | jsonify }},
+    "url": "{{ site.url }}",
+    "author": {
+      "@type": "Person",
+      "name": {{ site.author | jsonify }},
+      "url": "https://github.com/junze-xu"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}/search/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+    {% endif %}
+  }
+  </script>
+
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.subscribe_rss }}">
   <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
