@@ -1,7 +1,6 @@
-- name: 码志
-  url: http://mazhuang.org
-  src: life
+# 友邻链接
+# 格式：name（名称）、url（链接）、src（分组：life/www）
 
-- name: 聆听风声
-  url: http://www.codeinfo.top
+- name: 码志
+  url: https://mazhuang.org
   src: www
