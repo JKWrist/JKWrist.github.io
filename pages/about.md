@@ -26,9 +26,9 @@ permalink: /about/
       这个博客记录我在技术学习过程中的笔记、思考与实践经验。
       所有文章与速查手册都可以在 <a href="{{ '/' | relative_url }}">首页</a> 按分类浏览。
     </p>
-    <div style="margin-top: 2rem;">
-      <img src="{{ '/images/Wechat_JunzeXu.jpeg' | relative_url }}" alt="微信二维码" style="width: 140px; height: auto; border-radius: 12px; border: 1px solid var(--border); display: block;">
-      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem;">扫码加微信</p>
+    <div style="margin-top: 2rem; text-align: center;">
+      <img src="{{ '/images/Wechat_JunzeXu.jpeg' | relative_url }}" alt="微信二维码" style="width: 180px; height: auto; border-radius: 12px; border: 1px solid var(--border); display: block; margin: 0 auto;">
+      <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.6rem;">欢迎与我交流</p>
     </div>
   </div>
 </section>
