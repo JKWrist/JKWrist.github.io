@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 读书：穷查理宝典
-categories: Blog
+categories: 读书
 description: 穷查理宝典读书笔记。
 keywords: 穷查理宝典
 ---

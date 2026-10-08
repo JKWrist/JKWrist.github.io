@@ -21,7 +21,7 @@
 - 自研深色主题（CSS 变量驱动，原生 JS，无 jQuery 依赖）
 - [Utterances](https://utteranc.es/) 评论系统（基于 GitHub Issues，无隐私追踪）
 - [不蒜子](https://busuanzi.ibruce.info/) 轻量访问量统计
-- SEO：Open Graph / Twitter Card / JSON-LD 结构化数据 / canonical URL / sitemap.xml / robots.txt 全齐备
+- SEO优化：Open Graph / Twitter Card / JSON-LD 结构化数据 / canonical URL / sitemap.xml / robots.txt
 
 ## 本地运行
 
